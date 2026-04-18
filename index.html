@@ -1,1429 +1,1319 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contract Partnership Form</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --primary: #1a3a52;
-        --primary-light: #2d5a7b;
-        --accent: #c41e3a;
-        --accent-light: #d63853;
-        --text-primary: #1a1a1a;
-        --text-secondary: #5a5a5a;
-        --text-light: #8a8a8a;
-        --border-color: #d4ccc8;
-        --bg-white: #fafaf8;
-        --bg-light: #f3ede8;
-        --success: #2d7a4a;
-        --error: #c41e3a;
-        --shadow-sm: 0 2px 8px rgba(26, 58, 82, 0.06);
-        --shadow-md: 0 8px 24px rgba(26, 58, 82, 0.12);
-        --shadow-lg: 0 20px 48px rgba(26, 58, 82, 0.15);
-      }
-
-      html,
-      body {
-        height: 100%;
-        font-family: "Lora", serif;
-        background: linear-gradient(135deg, #f3ede8 0%, #ebe5e0 100%);
-        color: var(--text-primary);
-      }
-
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        min-height: 100vh;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 780px;
-        background: var(--bg-white);
-        border-radius: 2px;
-        box-shadow: var(--shadow-lg);
-        padding: 80px 60px 60px;
-        animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        border-top: 3px solid var(--primary);
-      }
-
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(40px);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        :root {
+            --primary: #1a3a52;
+            --primary-light: #2d5a7b;
+            --accent: #c41e3a;
+            --accent-light: #d63853;
+            --text-primary: #1a1a1a;
+            --text-secondary: #5a5a5a;
+            --text-light: #8a8a8a;
+            --border-color: #d4ccc8;
+            --bg-white: #fafaf8;
+            --bg-light: #f3ede8;
+            --success: #2d7a4a;
+            --error: #c41e3a;
+            --shadow-sm: 0 2px 8px rgba(26, 58, 82, 0.06);
+            --shadow-md: 0 8px 24px rgba(26, 58, 82, 0.12);
+            --shadow-lg: 0 20px 48px rgba(26, 58, 82, 0.15);
         }
-      }
 
-      /* Header Section */
-      .header {
-        text-align: center;
-        margin-bottom: 60px;
-        padding-bottom: 40px;
-        border-bottom: 1px solid var(--border-color);
-        animation: fadeInDown 0.8s ease-out 0.1s both;
-      }
-
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
+        html, body {
+            height: 100%;
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #f3ede8 0%, #ebe5e0 100%);
+            color: var(--text-primary);
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
         }
-      }
 
-      .logo-mark {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: var(--primary);
-        color: white;
-        border-radius: 2px;
-        font-weight: 700;
-        font-size: 18px;
-        margin-bottom: 16px;
-        font-family: "Playfair Display", serif;
-      }
-
-      .header h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 32px;
-        font-weight: 700;
-        letter-spacing: -1px;
-        margin-bottom: 8px;
-        color: var(--primary);
-      }
-
-      .header p {
-        font-size: 14px;
-        color: var(--text-secondary);
-        font-weight: 500;
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-        tracking: wide;
-      }
-
-      /* Progress Bar Styling - Premium */
-      .progress-container {
-        margin-bottom: 50px;
-      }
-
-      .progress-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        position: relative;
-        gap: 20px;
-      }
-
-      .progress-bar::before {
-        content: "";
-        position: absolute;
-        top: 20px;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: var(--border-color);
-        z-index: 0;
-      }
-
-      .step {
-        flex: 1;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-        cursor: default;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .step-number {
-        width: 44px;
-        height: 44px;
-        margin: 0 auto 12px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        font-weight: 700;
-        background: white;
-        border: 2px solid var(--border-color);
-        color: var(--text-light);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        font-family: "Playfair Display", serif;
-      }
-
-      .step-label {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 1.2px;
-        color: var(--text-light);
-        text-transform: uppercase;
-        transition: all 0.4s ease;
-        font-family: "Lora", serif;
-      }
-
-      .step::after {
-        content: "";
-        position: absolute;
-        bottom: -35px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 2px;
-        background: var(--accent);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .step.active .step-number {
-        background: var(--accent);
-        color: white;
-        border-color: var(--accent);
-        box-shadow: 0 4px 16px rgba(196, 30, 58, 0.2);
-        transform: scale(1.1);
-      }
-
-      .step.active .step-label {
-        color: var(--accent);
-        font-weight: 700;
-      }
-
-      .step.active::after {
-        width: 100%;
-      }
-
-      .step.completed .step-number {
-        background: var(--success);
-        color: white;
-        border-color: var(--success);
-        box-shadow: 0 4px 16px rgba(45, 122, 74, 0.2);
-      }
-
-      .step.completed .step-label {
-        color: var(--success);
-        font-weight: 600;
-      }
-
-      .step.completed::after {
-        background: var(--success);
-        width: 100%;
-      }
-
-      /* Form Sections */
-      .form-section {
-        display: none;
-        animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .form-section.active {
-        display: block;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
+        .container {
+            width: 100%;
+            max-width: 780px;
+            background: var(--bg-white);
+            border-radius: 2px;
+            box-shadow: var(--shadow-lg);
+            padding: 80px 60px 60px;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            border-top: 3px solid var(--primary);
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-      }
 
-      .section-title {
-        font-family: "Playfair Display", serif;
-        font-size: 24px;
-        font-weight: 700;
-        color: var(--primary);
-        margin-bottom: 32px;
-        letter-spacing: -0.5px;
-        padding-bottom: 12px;
-        border-bottom: 2px solid var(--accent);
-        display: inline-block;
-      }
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            animation: fadeInDown 0.8s ease-out 0.1s both;
+        }
 
-      .section-subtitle {
-        font-size: 13px;
-        color: var(--text-secondary);
-        margin-bottom: 28px;
-        line-height: 1.6;
-      }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-      /* Form Groups */
-      .form-group {
-        margin-bottom: 28px;
-        animation: fadeIn 0.5s ease-out;
-      }
+        .logo-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 16px;
+            font-family: 'Playfair Display', serif;
+        }
 
-      .form-group label {
-        display: block;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--primary);
-        margin-bottom: 10px;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        font-family: "Lora", serif;
-      }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
 
-      .form-group input[type="text"],
-      .form-group input[type="email"],
-      .form-group input[type="file"],
-      .form-group input[type="date"],
-      .form-group input[type="tel"] {
-        width: 100%;
-        padding: 14px 16px;
-        border: 1px solid var(--border-color);
-        border-radius: 2px;
-        font-size: 14px;
-        color: var(--text-primary);
-        background: white;
-        transition: all 0.3s ease;
-        font-family: "Lora", serif;
-        letter-spacing: 0.2px;
-      }
+        .header p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            tracking: wide;
+        }
 
-      .form-group input[type="text"]:focus,
-      .form-group input[type="email"]:focus,
-      .form-group input[type="file"]:focus,
-      .form-group input[type="date"]:focus,
-      .form-group input[type="tel"]:focus {
-        outline: none;
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.08);
-        background: rgba(196, 30, 58, 0.01);
-      }
+        /* Progress Bar Styling - Premium */
+        .progress-container {
+            margin-bottom: 50px;
+        }
 
-      .form-group input[type="text"]::placeholder {
-        color: var(--text-light);
-        opacity: 0.7;
-      }
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            gap: 20px;
+        }
 
-      .form-group input[type="file"]::file-selector-button {
-        background: var(--bg-light);
-        color: var(--primary);
-        border: 1px solid var(--border-color);
-        padding: 10px 18px;
-        border-radius: 2px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 12px;
-        transition: all 0.3s ease;
-        margin-right: 12px;
-        font-family: "Lora", serif;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-      }
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border-color);
+            z-index: 0;
+        }
 
-      .form-group input[type="file"]::file-selector-button:hover {
-        background: var(--accent);
-        color: white;
-        border-color: var(--accent);
-      }
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            cursor: default;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-      /* Checkbox and Radio Styling - Premium */
-      .checkbox-group,
-      .radio-group {
-        display: grid;
-        gap: 16px;
-      }
+        .step-number {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            background: white;
+            border: 2px solid var(--border-color);
+            color: var(--text-light);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'Playfair Display', serif;
+        }
 
-      .checkbox-item,
-      .radio-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        cursor: pointer;
-        padding: 12px;
-        border-radius: 2px;
-        transition: all 0.2s ease;
-      }
+        .step-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            font-family: 'Lora', serif;
+        }
 
-      .checkbox-item:hover,
-      .radio-item:hover {
-        background: var(--bg-light);
-      }
+        .step::after {
+            content: '';
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-      .checkbox-item input[type="checkbox"],
-      .radio-item input[type="radio"] {
-        cursor: pointer;
-        width: 20px;
-        height: 20px;
-        accent-color: var(--accent);
-        margin-top: 2px;
-        flex-shrink: 0;
-      }
+        .step.active .step-number {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: 0 4px 16px rgba(196, 30, 58, 0.2);
+            transform: scale(1.1);
+        }
 
-      .checkbox-item label,
-      .radio-item label {
-        margin: 0;
-        text-transform: none;
-        font-weight: 500;
-        color: var(--text-primary);
-        cursor: pointer;
-        font-size: 14px;
-        line-height: 1.5;
-      }
+        .step.active .step-label {
+            color: var(--accent);
+            font-weight: 700;
+        }
 
-      /* Address Section - Multi-column */
-      .address-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-      }
+        .step.active::after {
+            width: 100%;
+        }
 
-      .address-grid .form-group:nth-child(3),
-      .address-grid .form-group:nth-child(4) {
-        grid-column: 1 / -1;
-      }
+        .step.completed .step-number {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+            box-shadow: 0 4px 16px rgba(45, 122, 74, 0.2);
+        }
 
-      @media (max-width: 600px) {
+        .step.completed .step-label {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .step.completed::after {
+            background: var(--success);
+            width: 100%;
+        }
+
+        /* Form Sections */
+        .form-section {
+            display: none;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 28px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-family: 'Lora', serif;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="file"],
+        .form-group input[type="date"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+            font-size: 14px;
+            color: var(--text-primary);
+            background: white;
+            transition: all 0.3s ease;
+            font-family: 'Lora', serif;
+            letter-spacing: 0.2px;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="file"]:focus,
+        .form-group input[type="date"]:focus,
+        .form-group input[type="tel"]:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.08);
+            background: rgba(196, 30, 58, 0.01);
+        }
+
+        .form-group input[type="text"]::placeholder {
+            color: var(--text-light);
+            opacity: 0.7;
+        }
+
+        .form-group input[type="file"]::file-selector-button {
+            background: var(--bg-light);
+            color: var(--primary);
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            margin-right: 12px;
+            font-family: 'Lora', serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .form-group input[type="file"]::file-selector-button:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Checkbox and Radio Styling - Premium */
+        .checkbox-group,
+        .radio-group {
+            display: grid;
+            gap: 16px;
+        }
+
+        .checkbox-item,
+        .radio-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-item:hover,
+        .radio-item:hover {
+            background: var(--bg-light);
+        }
+
+        .checkbox-item input[type="checkbox"],
+        .radio-item input[type="radio"] {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .checkbox-item label,
+        .radio-item label {
+            margin: 0;
+            text-transform: none;
+            font-weight: 500;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Address Section - Multi-column */
         .address-grid {
-          grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
         }
 
         .address-grid .form-group:nth-child(3),
         .address-grid .form-group:nth-child(4) {
-          grid-column: auto;
-        }
-      }
-
-      /* Buttons - Premium */
-      .button-group {
-        display: flex;
-        gap: 16px;
-        margin-top: 48px;
-        justify-content: flex-end;
-        padding-top: 28px;
-        border-top: 1px solid var(--border-color);
-      }
-
-      button {
-        padding: 14px 32px;
-        border: none;
-        border-radius: 2px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.8px;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        text-transform: uppercase;
-        font-family: "Lora", serif;
-        position: relative;
-        overflow: hidden;
-      }
-
-      button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.2);
-        transition: left 0.3s ease;
-        z-index: 0;
-      }
-
-      button:hover::before {
-        left: 100%;
-      }
-
-      .btn-next {
-        background: var(--accent);
-        color: white;
-        position: relative;
-        z-index: 1;
-      }
-
-      .btn-next:hover:not(:disabled) {
-        background: var(--accent-light);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .btn-next:active:not(:disabled) {
-        transform: translateY(0);
-      }
-
-      .btn-next:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      .btn-submit {
-        background: var(--success);
-        color: white;
-        position: relative;
-        z-index: 1;
-      }
-
-      .btn-submit:hover:not(:disabled) {
-        background: #1e5a35;
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .btn-submit:active:not(:disabled) {
-        transform: translateY(0);
-      }
-
-      .btn-submit:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      .btn-back {
-        background: transparent;
-        color: var(--text-secondary);
-        border: 1px solid var(--border-color);
-      }
-
-      .btn-back:hover {
-        background: var(--bg-light);
-        border-color: var(--text-secondary);
-        transform: translateY(-2px);
-      }
-
-      /* Signature Canvas Styling */
-      .signature-container {
-        margin-bottom: 28px;
-      }
-
-      .signature-canvas-wrapper {
-        border: 2px solid var(--border-color);
-        border-radius: 2px;
-        background: white;
-        overflow: hidden;
-        margin-bottom: 12px;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-      }
-
-      .signature-canvas-wrapper:focus-within {
-        border-color: var(--accent);
-        box-shadow:
-          inset 0 1px 3px rgba(0, 0, 0, 0.05),
-          0 0 0 3px rgba(196, 30, 58, 0.08);
-      }
-
-      #signatureCanvas {
-        display: block;
-        cursor: crosshair;
-        touch-action: none;
-        width: 100%;
-        height: 200px;
-        background: white;
-      }
-
-      .signature-controls {
-        display: flex;
-        gap: 10px;
-        margin-top: 12px;
-      }
-
-      .signature-controls button {
-        flex: 1;
-        padding: 10px 16px;
-        font-size: 11px;
-        background: var(--bg-light);
-        color: var(--text-secondary);
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-      }
-
-      .signature-controls button:hover {
-        background: white;
-        color: var(--primary);
-        border-color: var(--accent);
-      }
-
-      .signature-help-text {
-        font-size: 12px;
-        color: var(--text-light);
-        font-style: italic;
-        margin-top: 8px;
-      }
-
-      /* Error/Success Messages */
-      .error-message {
-        color: var(--error);
-        font-size: 12px;
-        margin-top: 6px;
-        display: none;
-        font-style: italic;
-      }
-
-      .form-group.error input,
-      .form-group.error select {
-        border-color: var(--error);
-        background: rgba(196, 30, 58, 0.02);
-      }
-
-      .form-group.error .error-message {
-        display: block;
-      }
-
-      /* Success modal - Premium */
-      .success-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(26, 26, 26, 0.7);
-        z-index: 1000;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(4px);
-      }
-
-      .success-modal.show {
-        display: flex;
-        animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .success-modal-content {
-        background: white;
-        padding: 60px 50px;
-        border-radius: 2px;
-        text-align: center;
-        max-width: 420px;
-        box-shadow: var(--shadow-lg);
-        border-top: 3px solid var(--success);
-        animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .success-checkmark {
-        width: 60px;
-        height: 60px;
-        margin: 0 auto 24px;
-        background: var(--success);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 32px;
-        color: white;
-        animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
-      }
-
-      @keyframes scaleIn {
-        from {
-          transform: scale(0);
-        }
-        to {
-          transform: scale(1);
-        }
-      }
-
-      .success-modal-content h2 {
-        font-family: "Playfair Display", serif;
-        color: var(--primary);
-        margin-bottom: 12px;
-        font-size: 28px;
-        font-weight: 700;
-      }
-
-      .success-modal-content p {
-        color: var(--text-secondary);
-        margin-bottom: 32px;
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .success-modal-content button {
-        width: 100%;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .container {
-          padding: 50px 40px 40px;
+            grid-column: 1 / -1;
         }
 
-        .header h1 {
-          font-size: 28px;
+        @media (max-width: 600px) {
+            .address-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .address-grid .form-group:nth-child(3),
+            .address-grid .form-group:nth-child(4) {
+                grid-column: auto;
+            }
         }
 
-        .section-title {
-          font-size: 22px;
-        }
-
-        .progress-bar {
-          gap: 10px;
-        }
-
-        .step-number {
-          width: 40px;
-          height: 40px;
-          font-size: 14px;
-        }
-
-        .step-label {
-          font-size: 10px;
-        }
-
+        /* Buttons - Premium */
         .button-group {
-          flex-wrap: wrap;
+            display: flex;
+            gap: 16px;
+            margin-top: 48px;
+            justify-content: flex-end;
+            padding-top: 28px;
+            border-top: 1px solid var(--border-color);
         }
 
         button {
-          flex: 1;
-          min-width: 120px;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .container {
-          padding: 40px 25px 35px;
-          border-radius: 0;
-        }
-
-        .header {
-          margin-bottom: 40px;
-        }
-
-        .header h1 {
-          font-size: 24px;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-transform: uppercase;
+            font-family: 'Lora', serif;
+            position: relative;
+            overflow: hidden;
         }
 
-        .section-title {
-          font-size: 20px;
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: 0;
         }
 
-        .progress-bar {
-          gap: 5px;
+        button:hover::before {
+            left: 100%;
         }
 
-        .step-number {
-          width: 36px;
-          height: 36px;
-          font-size: 13px;
+        .btn-next {
+            background: var(--accent);
+            color: white;
+            position: relative;
+            z-index: 1;
         }
 
-        .step-label {
-          font-size: 9px;
+        .btn-next:hover:not(:disabled) {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
-        .button-group {
-          flex-direction: column-reverse;
-          gap: 12px;
+        .btn-next:active:not(:disabled) {
+            transform: translateY(0);
         }
 
-        button {
-          width: 100%;
+        .btn-next:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
-        .address-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
+        .btn-submit {
+            background: var(--success);
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            background: #1e5a35;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-submit:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-back {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-back:hover {
+            background: var(--bg-light);
+            border-color: var(--text-secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Signature Canvas Styling */
+        .signature-container {
+            margin-bottom: 28px;
+        }
+
+        .signature-canvas-wrapper {
+            border: 2px solid var(--border-color);
+            border-radius: 2px;
+            background: white;
+            overflow: visible;
+            margin-bottom: 12px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+
+        .signature-canvas-wrapper:focus-within {
+            border-color: var(--accent);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(196, 30, 58, 0.08);
         }
 
         #signatureCanvas {
-          height: 150px;
+            display: block;
+            cursor: crosshair;
+            touch-action: none;
+            width: 100%;
+            height: 200px;
+            background: white;
+            border: none;
+            border-radius: 1px;
+        }
+
+        .signature-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .signature-controls button {
+            flex: 1;
+            padding: 10px 16px;
+            font-size: 11px;
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .signature-controls button:hover {
+            background: white;
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        .signature-help-text {
+            font-size: 12px;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        /* Error/Success Messages */
+        .error-message {
+            color: var(--error);
+            font-size: 12px;
+            margin-top: 6px;
+            display: none;
+            font-style: italic;
+        }
+
+        .form-group.error input,
+        .form-group.error select {
+            border-color: var(--error);
+            background: rgba(196, 30, 58, 0.02);
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        /* Success modal - Premium */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 26, 26, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .success-modal.show {
+            display: flex;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .success-modal-content {
-          padding: 40px 30px;
-          max-width: 90%;
+            background: white;
+            padding: 60px 50px;
+            border-radius: 2px;
+            text-align: center;
+            max-width: 420px;
+            box-shadow: var(--shadow-lg);
+            border-top: 3px solid var(--success);
+            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-      }
 
-      /* Loading state */
-      .btn-submit.loading {
-        position: relative;
-        color: transparent;
-      }
-
-      .btn-submit.loading::after {
-        content: "";
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        top: 50%;
-        left: 50%;
-        margin-left: -8px;
-        margin-top: -8px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-top-color: white;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-      }
-
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
+        .success-checkmark {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
         }
-      }
 
-      /* Optional field indicator */
-      .optional {
-        font-weight: 400;
-        color: var(--text-light);
-        text-transform: none;
-        font-style: italic;
-      }
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
 
-      /* Professional styling enhancements */
-      .form-section {
-        margin-bottom: 20px;
-      }
+        .success-modal-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 28px;
+            font-weight: 700;
+        }
 
-      input:-autofill,
-      input:-autofill:hover,
-      input:-autofill:focus,
-      input:-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px white inset !important;
-        box-shadow: 0 0 0 30px white inset !important;
-      }
+        .success-modal-content p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
 
-      input:-autofill {
-        -webkit-text-fill-color: var(--text-primary) !important;
-      }
+        .success-modal-content button {
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 50px 40px 40px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .progress-bar {
+                gap: 10px;
+            }
+
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+
+            .step-label {
+                font-size: 10px;
+            }
+
+            .button-group {
+                flex-wrap: wrap;
+            }
+
+            button {
+                flex: 1;
+                min-width: 120px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px 35px;
+                border-radius: 0;
+            }
+
+            .header {
+                margin-bottom: 40px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .progress-bar {
+                gap: 5px;
+            }
+
+            .step-number {
+                width: 36px;
+                height: 36px;
+                font-size: 13px;
+            }
+
+            .step-label {
+                font-size: 9px;
+            }
+
+            .button-group {
+                flex-direction: column-reverse;
+                gap: 12px;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .address-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            #signatureCanvas {
+                height: 150px;
+            }
+
+            .success-modal-content {
+                padding: 40px 30px;
+                max-width: 90%;
+            }
+        }
+
+        /* Loading state */
+        .btn-submit.loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .btn-submit.loading::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            margin-left: -8px;
+            margin-top: -8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Optional field indicator */
+        .optional {
+            font-weight: 400;
+            color: var(--text-light);
+            text-transform: none;
+            font-style: italic;
+        }
+
+        /* Professional styling enhancements */
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        input:-autofill,
+        input:-autofill:hover,
+        input:-autofill:focus,
+        input:-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+            box-shadow: 0 0 0 30px white inset !important;
+        }
+
+        input:-autofill {
+            -webkit-text-fill-color: var(--text-primary) !important;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <!-- Premium Header -->
-      <div class="header">
-        <h1
-          style="font-size: 28px; margin-bottom: 24px; letter-spacing: -0.8px"
-        >
-          CONTRACT PARTNERSHIP FORM
-        </h1>
-        <div class="logo-mark">CP</div>
-        <p>Professional Partnership Agreement Form</p>
-      </div>
-
-      <!-- Progress Bar -->
-      <div class="progress-container">
-        <div class="progress-bar">
-          <div class="step active" data-step="1">
-            <div class="step-number">01</div>
-            <div class="step-label">Personal</div>
-          </div>
-          <div class="step" data-step="2">
-            <div class="step-number">02</div>
-            <div class="step-label">Tax ID</div>
-          </div>
-          <div class="step" data-step="3">
-            <div class="step-number">03</div>
-            <div class="step-label">Address</div>
-          </div>
-          <div class="step" data-step="4">
-            <div class="step-number">04</div>
-            <div class="step-label">Certify</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Form -->
-      <form id="contractForm">
-        <!-- Section 1: Personal -->
-        <div class="form-section active" data-section="1">
-          <h2 class="section-title">Personal Information</h2>
-          <p class="section-subtitle">
-            Please provide your legal details. These will be used to establish
-            the partnership agreement.
-          </p>
-
-          <div class="form-group">
-            <label for="fullName">Full Legal Name *</label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              placeholder="As it appears on official documents"
-              required
-            />
-            <span class="error-message">This field is required</span>
-          </div>
-
-          <div class="form-group">
-            <label for="businessName"
-              >Business Name <span class="optional">(Optional)</span></label
-            >
-            <input
-              type="text"
-              id="businessName"
-              name="businessName"
-              placeholder="Operating name or DBA"
-            />
-          </div>
-
-          <div class="form-group">
-            <label>Entity Type *</label>
-            <div class="radio-group">
-              <div class="radio-item">
-                <input
-                  type="radio"
-                  id="entityIndividual"
-                  name="entityType"
-                  value="Individual/Sole Proprietor"
-                  required
-                />
-                <label for="entityIndividual"
-                  >Individual / Sole Proprietor</label
-                >
-              </div>
-              <div class="radio-item">
-                <input
-                  type="radio"
-                  id="entityLLC"
-                  name="entityType"
-                  value="LLC"
-                />
-                <label for="entityLLC">Limited Liability Company (LLC)</label>
-              </div>
-              <div class="radio-item">
-                <input
-                  type="radio"
-                  id="entityCorp"
-                  name="entityType"
-                  value="Corporation"
-                />
-                <label for="entityCorp">Corporation</label>
-              </div>
-              <div class="radio-item">
-                <input
-                  type="radio"
-                  id="entityPartner"
-                  name="entityType"
-                  value="Partnership"
-                />
-                <label for="entityPartner">Partnership</label>
-              </div>
-            </div>
-            <span class="error-message">Please select an entity type</span>
-          </div>
-
-          <div class="button-group">
-            <button type="button" class="btn-next" onclick="nextSection(1)">
-              Next
-            </button>
-          </div>
+        <!-- Premium Header -->
+        <div class="header">
+            <h1 style="font-size: 28px; margin-bottom: 24px; letter-spacing: -0.8px;">CONTRACT PARTNERSHIP FORM</h1>
+            <div class="logo-mark">CP</div>
+            <p>Professional Partnership Agreement Form</p>
         </div>
 
-        <!-- Section 2: Tax ID -->
-        <div class="form-section" data-section="2">
-          <h2 class="section-title">Tax Identification</h2>
-          <p class="section-subtitle">
-            Provide your tax identification number and upload a valid ID
-            document for verification purposes.
-          </p>
-
-          <div class="form-group">
-            <label for="ssn">Tax ID / SSN *</label>
-            <input
-              type="text"
-              id="ssn"
-              name="ssn"
-              placeholder="XXX-XX-XXXX"
-              required
-            />
-            <span class="error-message">This field is required</span>
-          </div>
-
-          <div class="form-group">
-            <label for="idUpload">Valid ID Document (PDF, JPG, PNG) *</label>
-            <input
-              type="file"
-              id="idUpload"
-              name="idUpload"
-              accept=".jpg,.jpeg,.png,.pdf"
-              required
-            />
-            <span class="error-message">A valid document is required</span>
-            <div class="signature-help-text">
-              Accepted formats: Passport, Driver's License, or ID Card (Max
-              10MB)
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="step active" data-step="1">
+                    <div class="step-number">01</div>
+                    <div class="step-label">Personal</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">02</div>
+                    <div class="step-label">Tax ID</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">03</div>
+                    <div class="step-label">Address</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">04</div>
+                    <div class="step-label">Certify</div>
+                </div>
             </div>
-          </div>
-
-          <div class="button-group">
-            <button type="button" class="btn-back" onclick="previousSection(2)">
-              Back
-            </button>
-            <button type="button" class="btn-next" onclick="nextSection(2)">
-              Next
-            </button>
-          </div>
         </div>
 
-        <!-- Section 3: Address -->
-        <div class="form-section" data-section="3">
-          <h2 class="section-title">Address Information</h2>
-          <p class="section-subtitle">
-            Provide your complete business address for official correspondence
-            and legal notices.
-          </p>
+        <!-- Form -->
+        <form id="contractForm">
+            <!-- Section 1: Personal -->
+            <div class="form-section active" data-section="1">
+                <h2 class="section-title">Personal Information</h2>
+                <p class="section-subtitle">Please provide your legal details. These will be used to establish the partnership agreement.</p>
+                
+                <div class="form-group">
+                    <label for="fullName">Full Legal Name *</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="As it appears on official documents" required>
+                    <span class="error-message">This field is required</span>
+                </div>
 
-          <div class="address-grid">
-            <div class="form-group">
-              <label for="street">Street Address *</label>
-              <input
-                type="text"
-                id="street"
-                name="street"
-                placeholder="Street number and name"
-                required
-              />
-              <span class="error-message">This field is required</span>
+                <div class="form-group">
+                    <label for="businessName">Business Name <span class="optional">(Optional)</span></label>
+                    <input type="text" id="businessName" name="businessName" placeholder="Operating name or DBA">
+                </div>
+
+                <div class="form-group">
+                    <label>Entity Type *</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="entityIndividual" name="entityType" value="Individual/Sole Proprietor" required>
+                            <label for="entityIndividual">Individual / Sole Proprietor</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="entityLLC" name="entityType" value="LLC">
+                            <label for="entityLLC">Limited Liability Company (LLC)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="entityCorp" name="entityType" value="Corporation">
+                            <label for="entityCorp">Corporation</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="entityPartner" name="entityType" value="Partnership">
+                            <label for="entityPartner">Partnership</label>
+                        </div>
+                    </div>
+                    <span class="error-message">Please select an entity type</span>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-next" onclick="nextSection(1)">Next</button>
+                </div>
             </div>
 
-            <div class="form-group">
-              <label for="city">City *</label>
-              <input
-                type="text"
-                id="city"
-                name="city"
-                placeholder="City"
-                required
-              />
-              <span class="error-message">This field is required</span>
+            <!-- Section 2: Tax ID -->
+            <div class="form-section" data-section="2">
+                <h2 class="section-title">Tax Identification</h2>
+                <p class="section-subtitle">Provide your tax identification number and upload a valid ID document for verification purposes.</p>
+                
+                <div class="form-group">
+                    <label for="ssn">Tax ID / SSN *</label>
+                    <input type="text" id="ssn" name="ssn" placeholder="XXX-XX-XXXX" required>
+                    <span class="error-message">This field is required</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="idUpload">Valid ID Document (PDF, JPG, PNG) *</label>
+                    <input type="file" id="idUpload" name="idUpload" accept=".jpg,.jpeg,.png,.pdf" required>
+                    <span class="error-message">A valid document is required</span>
+                    <div class="signature-help-text">Accepted formats: Passport, Driver's License, or ID Card (Max 10MB)</div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-back" onclick="previousSection(2)">Back</button>
+                    <button type="button" class="btn-next" onclick="nextSection(2)">Next</button>
+                </div>
             </div>
 
-            <div class="form-group">
-              <label for="state">State / Province *</label>
-              <input
-                type="text"
-                id="state"
-                name="state"
-                placeholder="State"
-                required
-              />
-              <span class="error-message">This field is required</span>
+            <!-- Section 3: Address -->
+            <div class="form-section" data-section="3">
+                <h2 class="section-title">Address Information</h2>
+                <p class="section-subtitle">Provide your complete business address for official correspondence and legal notices.</p>
+                
+                <div class="address-grid">
+                    <div class="form-group">
+                        <label for="street">Street Address *</label>
+                        <input type="text" id="street" name="street" placeholder="Street number and name" required>
+                        <span class="error-message">This field is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" name="city" placeholder="City" required>
+                        <span class="error-message">This field is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State / Province *</label>
+                        <input type="text" id="state" name="state" placeholder="State" required>
+                        <span class="error-message">This field is required</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zip">ZIP / Postal Code *</label>
+                        <input type="text" id="zip" name="zip" placeholder="12345" required>
+                        <span class="error-message">This field is required</span>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-back" onclick="previousSection(3)">Back</button>
+                    <button type="button" class="btn-next" onclick="nextSection(3)">Next</button>
+                </div>
             </div>
 
-            <div class="form-group">
-              <label for="zip">ZIP / Postal Code *</label>
-              <input
-                type="text"
-                id="zip"
-                name="zip"
-                placeholder="12345"
-                required
-              />
-              <span class="error-message">This field is required</span>
+            <!-- Section 4: Certify with Digital Signature -->
+            <div class="form-section" data-section="4">
+                <h2 class="section-title">Certification & Signature</h2>
+                <p class="section-subtitle">By signing below, you acknowledge and agree to the terms of this partnership agreement.</p>
+                
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="certifyCheckbox" name="certify" required>
+                        <label for="certifyCheckbox">I certify that the information provided above is true, accurate, and complete to the best of my knowledge</label>
+                    </div>
+                    <span class="error-message">You must certify to proceed</span>
+                </div>
+
+                <div class="signature-container">
+                    <label>Digital Signature *</label>
+                    <div class="signature-canvas-wrapper">
+                        <canvas id="signatureCanvas"></canvas>
+                    </div>
+                    <div class="signature-controls">
+                        <button type="button" onclick="clearSignature()" class="clear-btn">Clear</button>
+                        <button type="button" onclick="downloadSignature()" class="download-btn">Download</button>
+                    </div>
+                    <div class="signature-help-text">Sign above using your mouse or touchscreen. Your signature will be recorded as part of this agreement.</div>
+                    <span class="error-message" id="signatureError">Please provide a signature</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date of Execution *</label>
+                    <input type="date" id="date" name="date" required>
+                    <span class="error-message">Date is required</span>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-back" onclick="previousSection(4)">Back</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">Submit Agreement</button>
+                </div>
             </div>
-          </div>
-
-          <div class="button-group">
-            <button type="button" class="btn-back" onclick="previousSection(3)">
-              Back
-            </button>
-            <button type="button" class="btn-next" onclick="nextSection(3)">
-              Next
-            </button>
-          </div>
-        </div>
-
-        <!-- Section 4: Certify with Digital Signature -->
-        <div class="form-section" data-section="4">
-          <h2 class="section-title">Certification & Signature</h2>
-          <p class="section-subtitle">
-            By signing below, you acknowledge and agree to the terms of this
-            partnership agreement.
-          </p>
-
-          <div class="form-group">
-            <div class="checkbox-item">
-              <input
-                type="checkbox"
-                id="certifyCheckbox"
-                name="certify"
-                required
-              />
-              <label for="certifyCheckbox"
-                >I certify that the information provided above is true,
-                accurate, and complete to the best of my knowledge</label
-              >
-            </div>
-            <span class="error-message">You must certify to proceed</span>
-          </div>
-
-          <div class="signature-container">
-            <label>Digital Signature *</label>
-            <div class="signature-canvas-wrapper">
-              <canvas id="signatureCanvas"></canvas>
-            </div>
-            <div class="signature-controls">
-              <button
-                type="button"
-                onclick="clearSignature()"
-                class="clear-btn"
-              >
-                Clear
-              </button>
-              <button
-                type="button"
-                onclick="downloadSignature()"
-                class="download-btn"
-              >
-                Download
-              </button>
-            </div>
-            <div class="signature-help-text">
-              Sign above using your mouse or touchscreen. Your signature will be
-              recorded as part of this agreement.
-            </div>
-            <span class="error-message" id="signatureError"
-              >Please provide a signature</span
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="date">Date of Execution *</label>
-            <input type="date" id="date" name="date" required />
-            <span class="error-message">Date is required</span>
-          </div>
-
-          <div class="button-group">
-            <button type="button" class="btn-back" onclick="previousSection(4)">
-              Back
-            </button>
-            <button type="submit" class="btn-submit" id="submitBtn">
-              Submit Agreement
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
     </div>
 
     <!-- Success Modal -->
     <div class="success-modal" id="successModal">
-      <div class="success-modal-content">
-        <div class="success-checkmark">✓</div>
-        <h2>Agreement Submitted</h2>
-        <p>
-          Your partnership agreement has been successfully executed and filed.
-          You will receive confirmation details shortly.
-        </p>
-        <button onclick="resetForm()">Submit Another</button>
-      </div>
+        <div class="success-modal-content">
+            <div class="success-checkmark">✓</div>
+            <h2>Agreement Submitted</h2>
+            <p>Your partnership agreement has been successfully executed and filed. You will receive confirmation details shortly.</p>
+            <button onclick="resetForm()">Submit Another</button>
+        </div>
     </div>
 
     <script>
-      const form = document.getElementById("contractForm");
-      const dateInput = document.getElementById("date");
-      const successModal = document.getElementById("successModal");
-      const signatureCanvas = document.getElementById("signatureCanvas");
-      const ctx = signatureCanvas.getContext("2d");
+        const form = document.getElementById('contractForm');
+        const dateInput = document.getElementById('date');
+        const successModal = document.getElementById('successModal');
+        const signatureCanvas = document.getElementById('signatureCanvas');
+        
+        let currentStep = 1;
+        let isDrawing = false;
+        let hasSignature = false;
+        let ctx = null;
 
-      let currentStep = 1;
-      let isDrawing = false;
-      let hasSignature = false;
-
-      // Initialize
-      function initializeForm() {
-        const today = new Date().toISOString().split("T")[0];
-        dateInput.value = today;
-        setupSignatureCanvas();
-      }
-
-      // Signature Canvas Setup
-      function setupSignatureCanvas() {
-        const wrapper = signatureCanvas.parentElement;
-        signatureCanvas.width = wrapper.clientWidth;
-        signatureCanvas.height = 200;
-
-        // Set up canvas context
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        ctx.lineWidth = 2.5;
-        ctx.strokeStyle = "#1a3a52";
-
-        // Mouse events
-        signatureCanvas.addEventListener("mousedown", startDrawing);
-        signatureCanvas.addEventListener("mousemove", draw);
-        signatureCanvas.addEventListener("mouseup", stopDrawing);
-        signatureCanvas.addEventListener("mouseout", stopDrawing);
-
-        // Touch events
-        signatureCanvas.addEventListener("touchstart", handleTouch);
-        signatureCanvas.addEventListener("touchmove", handleTouch);
-        signatureCanvas.addEventListener("touchend", stopDrawing);
-      }
-
-      function startDrawing(e) {
-        isDrawing = true;
-        const rect = signatureCanvas.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-      }
-
-      function draw(e) {
-        if (!isDrawing) return;
-        const rect = signatureCanvas.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        ctx.lineTo(x, y);
-        ctx.stroke();
-        hasSignature = true;
-        document.getElementById("signatureError").style.display = "none";
-      }
-
-      function stopDrawing() {
-        isDrawing = false;
-        ctx.closePath();
-      }
-
-      function handleTouch(e) {
-        e.preventDefault();
-        const touch = e.touches[0];
-        const mouseEvent = new MouseEvent(
-          e.type === "touchstart"
-            ? "mousedown"
-            : e.type === "touchmove"
-              ? "mousemove"
-              : "mouseup",
-          { clientX: touch.clientX, clientY: touch.clientY },
-        );
-        signatureCanvas.dispatchEvent(mouseEvent);
-        if (e.type === "touchmove") hasSignature = true;
-      }
-
-      function clearSignature() {
-        ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-        hasSignature = false;
-        document.getElementById("signatureError").style.display = "none";
-      }
-
-      function downloadSignature() {
-        if (!hasSignature) {
-          alert("Please draw a signature first");
-          return;
+        // Initialize
+        function initializeForm() {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+            
+            // Wait for canvas to be ready
+            setTimeout(() => {
+                setupSignatureCanvas();
+            }, 100);
         }
-        const link = document.createElement("a");
-        link.href = signatureCanvas.toDataURL("image/png");
-        link.download = "signature.png";
-        link.click();
-      }
 
-      // Form validation
-      function validateSection(sectionNum) {
-        const section = document.querySelector(
-          `.form-section[data-section="${sectionNum}"]`,
-        );
-        const inputs = section.querySelectorAll(
-          "input[required], select[required]",
-        );
-        let isValid = true;
-
-        inputs.forEach((input) => {
-          const formGroup = input.closest(".form-group");
-
-          if (input.type === "checkbox") {
-            if (!input.checked) {
-              formGroup.classList.add("error");
-              isValid = false;
-            } else {
-              formGroup.classList.remove("error");
+        // Signature Canvas Setup
+        function setupSignatureCanvas() {
+            if (!signatureCanvas) {
+                console.error('Canvas element not found');
+                return;
             }
-          } else if (input.type === "radio") {
-            const radioGroup = section.querySelectorAll(
-              `input[name="${input.name}"]`,
-            );
-            const isChecked = Array.from(radioGroup).some((r) => r.checked);
-            if (!isChecked) {
-              formGroup.classList.add("error");
-              isValid = false;
-            } else {
-              formGroup.classList.remove("error");
+
+            // Get the wrapper and set canvas size
+            const wrapper = signatureCanvas.parentElement;
+            const rect = wrapper.getBoundingClientRect();
+            
+            signatureCanvas.width = wrapper.offsetWidth || 600;
+            signatureCanvas.height = 200;
+
+            // Get context after sizing
+            ctx = signatureCanvas.getContext('2d');
+            
+            if (!ctx) {
+                console.error('Could not get canvas context');
+                return;
             }
-          } else if (input.type === "file") {
-            if (input.files.length === 0) {
-              formGroup.classList.add("error");
-              isValid = false;
-            } else {
-              formGroup.classList.remove("error");
+
+            // Set up canvas context
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.lineWidth = 2.5;
+            ctx.strokeStyle = '#1a3a52';
+            
+            // Set white background
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+
+            // Remove old listeners if any
+            signatureCanvas.replaceWith(signatureCanvas.cloneNode(true));
+            const newCanvas = document.getElementById('signatureCanvas');
+            
+            // Add event listeners to new canvas
+            newCanvas.addEventListener('mousedown', startDrawing, false);
+            newCanvas.addEventListener('mousemove', draw, false);
+            newCanvas.addEventListener('mouseup', stopDrawing, false);
+            newCanvas.addEventListener('mouseout', stopDrawing, false);
+
+            // Touch events
+            newCanvas.addEventListener('touchstart', handleTouch, false);
+            newCanvas.addEventListener('touchmove', handleTouch, false);
+            newCanvas.addEventListener('touchend', stopDrawing, false);
+            
+            console.log('✓ Signature canvas initialized');
+        }
+
+        function startDrawing(e) {
+            if (!ctx) return;
+            isDrawing = true;
+            const rect = signatureCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            hasSignature = true;
+        }
+
+        function draw(e) {
+            if (!isDrawing || !ctx) return;
+            const rect = signatureCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            hasSignature = true;
+            const errorEl = document.getElementById('signatureError');
+            if (errorEl) {
+                errorEl.style.display = 'none';
             }
-          } else if (input.value.trim() === "") {
-            formGroup.classList.add("error");
-            isValid = false;
-          } else {
-            formGroup.classList.remove("error");
-          }
+        }
+
+        function stopDrawing() {
+            if (!ctx) return;
+            isDrawing = false;
+            ctx.closePath();
+        }
+
+        function handleTouch(e) {
+            e.preventDefault();
+            if (!e.touches[0]) return;
+            
+            const touch = e.touches[0];
+            const rect = signatureCanvas.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+
+            if (e.type === 'touchstart') {
+                isDrawing = true;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                hasSignature = true;
+            } else if (e.type === 'touchmove' && isDrawing) {
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                hasSignature = true;
+            } else if (e.type === 'touchend') {
+                isDrawing = false;
+                ctx.closePath();
+            }
+        }
+
+        function clearSignature() {
+            if (!ctx) return;
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+            hasSignature = false;
+            const errorEl = document.getElementById('signatureError');
+            if (errorEl) {
+                errorEl.style.display = 'none';
+            }
+        }
+
+        function downloadSignature() {
+            if (!hasSignature) {
+                alert('Please draw a signature first');
+                return;
+            }
+            const link = document.createElement('a');
+            link.href = signatureCanvas.toDataURL('image/png');
+            link.download = 'signature.png';
+            link.click();
+        }
+
+        // Form validation
+        function validateSection(sectionNum) {
+            const section = document.querySelector(`.form-section[data-section="${sectionNum}"]`);
+            const inputs = section.querySelectorAll('input[required], select[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                const formGroup = input.closest('.form-group');
+                
+                if (input.type === 'checkbox') {
+                    if (!input.checked) {
+                        formGroup.classList.add('error');
+                        isValid = false;
+                    } else {
+                        formGroup.classList.remove('error');
+                    }
+                } else if (input.type === 'radio') {
+                    const radioGroup = section.querySelectorAll(`input[name="${input.name}"]`);
+                    const isChecked = Array.from(radioGroup).some(r => r.checked);
+                    if (!isChecked) {
+                        formGroup.classList.add('error');
+                        isValid = false;
+                    } else {
+                        formGroup.classList.remove('error');
+                    }
+                } else if (input.type === 'file') {
+                    if (input.files.length === 0) {
+                        formGroup.classList.add('error');
+                        isValid = false;
+                    } else {
+                        formGroup.classList.remove('error');
+                    }
+                } else if (input.value.trim() === '') {
+                    formGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    formGroup.classList.remove('error');
+                }
+            });
+
+            // Special validation for signature in section 4
+            if (sectionNum === 4 && !hasSignature) {
+                document.getElementById('signatureError').style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Next section
+        function nextSection(currentSectionNum) {
+            if (!validateSection(currentSectionNum)) {
+                return;
+            }
+
+            const currentSection = document.querySelector(`.form-section[data-section="${currentSectionNum}"]`);
+            const nextSection = document.querySelector(`.form-section[data-section="${currentSectionNum + 1}"]`);
+
+            if (nextSection) {
+                currentSection.classList.remove('active');
+                nextSection.classList.add('active');
+                updateProgress(currentSectionNum + 1);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Previous section
+        function previousSection(currentSectionNum) {
+            const currentSection = document.querySelector(`.form-section[data-section="${currentSectionNum}"]`);
+            const prevSection = document.querySelector(`.form-section[data-section="${currentSectionNum - 1}"]`);
+
+            if (prevSection) {
+                currentSection.classList.remove('active');
+                prevSection.classList.add('active');
+                updateProgress(currentSectionNum - 1);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Update progress bar
+        function updateProgress(step) {
+            currentStep = step;
+            document.querySelectorAll('.step').forEach((stepEl, index) => {
+                const stepNum = index + 1;
+                stepEl.classList.remove('active', 'completed');
+                
+                if (stepNum === step) {
+                    stepEl.classList.add('active');
+                } else if (stepNum < step) {
+                    stepEl.classList.add('completed');
+                }
+            });
+        }
+
+        // Form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!validateSection(4) || !hasSignature) {
+                document.getElementById('signatureError').style.display = 'block';
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            // Get signature as data URL
+            const signatureData = signatureCanvas.toDataURL('image/png');
+
+            // Create FormData
+            const formData = new FormData(form);
+            formData.append('signature', signatureData);
+
+            try {
+                // Determine backend URL (local or production)
+                const apiUrl = window.location.hostname === 'localhost' 
+                    ? 'http://localhost:3000/api/submit-form'
+                    : `${window.location.protocol}//${window.location.host}/api/submit-form`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    successModal.classList.add('show');
+                } else {
+                    const error = await response.json();
+                    alert('Error submitting form: ' + (error.error || 'Please try again.'));
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error submitting form. Please check your connection and try again.');
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
         });
 
-        // Special validation for signature in section 4
-        if (sectionNum === 4 && !hasSignature) {
-          document.getElementById("signatureError").style.display = "block";
-          isValid = false;
+        // Reset form
+        function resetForm() {
+            form.reset();
+            clearSignature();
+            successModal.classList.remove('show');
+            currentStep = 1;
+            document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+            document.querySelector('.form-section[data-section="1"]').classList.add('active');
+            updateProgress(1);
+            dateInput.value = new Date().toISOString().split('T')[0];
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        return isValid;
-      }
-
-      // Next section
-      function nextSection(currentSectionNum) {
-        if (!validateSection(currentSectionNum)) {
-          return;
-        }
-
-        const currentSection = document.querySelector(
-          `.form-section[data-section="${currentSectionNum}"]`,
-        );
-        const nextSection = document.querySelector(
-          `.form-section[data-section="${currentSectionNum + 1}"]`,
-        );
-
-        if (nextSection) {
-          currentSection.classList.remove("active");
-          nextSection.classList.add("active");
-          updateProgress(currentSectionNum + 1);
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      }
-
-      // Previous section
-      function previousSection(currentSectionNum) {
-        const currentSection = document.querySelector(
-          `.form-section[data-section="${currentSectionNum}"]`,
-        );
-        const prevSection = document.querySelector(
-          `.form-section[data-section="${currentSectionNum - 1}"]`,
-        );
-
-        if (prevSection) {
-          currentSection.classList.remove("active");
-          prevSection.classList.add("active");
-          updateProgress(currentSectionNum - 1);
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-      }
-
-      // Update progress bar
-      function updateProgress(step) {
-        currentStep = step;
-        document.querySelectorAll(".step").forEach((stepEl, index) => {
-          const stepNum = index + 1;
-          stepEl.classList.remove("active", "completed");
-
-          if (stepNum === step) {
-            stepEl.classList.add("active");
-          } else if (stepNum < step) {
-            stepEl.classList.add("completed");
-          }
+        // Clear error on input
+        form.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', () => {
+                input.closest('.form-group').classList.remove('error');
+            });
+            input.addEventListener('change', () => {
+                input.closest('.form-group').classList.remove('error');
+            });
         });
-      }
 
-      // Form submission
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        if (!validateSection(4) || !hasSignature) {
-          document.getElementById("signatureError").style.display = "block";
-          return;
+        // Initialize on load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeForm);
+        } else {
+            initializeForm();
         }
 
-        const submitBtn = document.getElementById("submitBtn");
-        submitBtn.classList.add("loading");
-        submitBtn.disabled = true;
-
-        // Get signature as data URL
-        const signatureData = signatureCanvas.toDataURL("image/png");
-
-        // Create FormData
-        const formData = new FormData(form);
-        formData.append("signature", signatureData);
-
-        try {
-          // Determine backend URL (local or production)
-          const apiUrl =
-            window.location.hostname === "localhost"
-              ? "http://localhost:3000/api/submit-form"
-              : `${window.location.protocol}//${window.location.host}/api/submit-form`;
-
-          const response = await fetch(apiUrl, {
-            method: "POST",
-            body: formData,
-          });
-
-          if (response.ok) {
-            successModal.classList.add("show");
-          } else {
-            const error = await response.json();
-            alert(
-              "Error submitting form: " + (error.error || "Please try again."),
-            );
-            submitBtn.classList.remove("loading");
-            submitBtn.disabled = false;
-          }
-        } catch (error) {
-          console.error("Error:", error);
-          alert(
-            "Error submitting form. Please check your connection and try again.",
-          );
-          submitBtn.classList.remove("loading");
-          submitBtn.disabled = false;
-        }
-      });
-
-      // Reset form
-      function resetForm() {
-        form.reset();
-        clearSignature();
-        successModal.classList.remove("show");
-        currentStep = 1;
-        document
-          .querySelectorAll(".form-section")
-          .forEach((s) => s.classList.remove("active"));
-        document
-          .querySelector('.form-section[data-section="1"]')
-          .classList.add("active");
-        updateProgress(1);
-        dateInput.value = new Date().toISOString().split("T")[0];
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-
-      // Clear error on input
-      form.querySelectorAll("input").forEach((input) => {
-        input.addEventListener("input", () => {
-          input.closest(".form-group").classList.remove("error");
+        window.addEventListener('resize', () => {
+            if (ctx) {
+                setupSignatureCanvas();
+            }
         });
-        input.addEventListener("change", () => {
-          input.closest(".form-group").classList.remove("error");
-        });
-      });
-
-      // Initialize on load
-      window.addEventListener("load", initializeForm);
-      window.addEventListener("resize", () => {
-        const imageData = ctx.getImageData(
-          0,
-          0,
-          signatureCanvas.width,
-          signatureCanvas.height,
-        );
-        signatureCanvas.width = signatureCanvas.parentElement.clientWidth;
-        ctx.putImageData(imageData, 0, 0);
-      });
     </script>
-  </body>
+</body>
 </html>
